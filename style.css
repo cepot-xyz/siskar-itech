@@ -1,0 +1,379 @@
+/* == HERO BUTTON == */
+.Btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f3136;
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.Btn::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: #2764f3;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: 0.3s;
+  mix-blend-mode: screen;
+}
+
+.Btn:hover::before {
+  transition-duration: 0.3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+}
+
+.Btn:active {
+  transform: translate(5px, 5px);
+  transition-duration: 0.3s;
+  mix-blend-mode: screen;
+}
+
+/* == ITEM CARD (Untuk Halaman Produk/Laptop) == */
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background-color: #1e1e1e;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+/* Card Details for Product Page */
+.card-details {
+  color: white;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  z-index: 10;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.text-body {
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Text */
+.text-title {
+  font-weight: bold;
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  padding: 0.5vh 1vh;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  display: inline-block;
+}
+
+/* Hover */
+.card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+/* == LOCAL CSS == */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "TASA Orbiter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  background: linear-gradient(135deg, #202134, #0c0d1f);
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 12vh; /* KOREKSI: Padding atas untuk fixed navbar */
+  overflow-x: hidden;
+}
+
+/* CLASS KHUSUS UNTUK HALAMAN KUIS (No Scroll) */
+.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  margin: 0;
+  padding: 3vh 5vh;
+  backdrop-filter: blur(25px);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-logo:hover {
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-btn {
+  color: white;
+  padding: 1vh 2vh;
+  border-radius: 5px;
+  margin: 1vh 0;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  color: #8a8b8e;
+  padding: 1vh 2vh;
+  border-radius: 5px;
+  margin: 1vh 0;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.divider {
+  color: transparent;
+  background-color: white;
+  font-size: 1%;
+  padding: 2vh 0;
+}
+
+.opsi-kuis {
+  display: flex;
+  gap: 2vh;
+}
+
+/* == SECTION FLEX (For Product Page) == */
+.section-flex {
+  display: flex;
+  width: 90%;
+  margin: 5vh auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-flex-results {
+  width: 90%;
+  max-width: 1200px;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+/* ========================================= */
+/* == MODIFIKASI KHUSUS HASIL PC KOMPONEN == */
+/* ========================================= */
+
+.section-flex.quiz-area > section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0;
+}
+
+.section-flex.quiz-area > section h2 {
+  color: white !important;
+  margin-bottom: 15px;
+}
+
+.section-flex.quiz-area .card-container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px 0;
+}
+
+.section-flex.quiz-area .component-card {
+  width: auto;
+  height: auto;
+  min-height: 190px;
+  border-radius: 10px;
+  background-color: transparent;
+  position: relative;
+  padding: 0;
+  border: 1px solid #444;
+  transition: 0.3s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-flex.quiz-area .component-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 15px rgba(0, 139, 248, 0.5);
+}
+
+.section-flex.quiz-area .component-card .text-title {
+  font-size: 1.1rem;
+  padding: 0;
+  margin-bottom: 5px;
+  backdrop-filter: none;
+  box-shadow: none;
+  color: #008bf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2em;
+}
+
+.section-flex.quiz-area .component-card .component-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.section-flex.quiz-area .component-card .card-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease-out;
+}
+
+.section-flex.quiz-area .component-card .component-image {
+  display: none;
+}
+
+.section-flex.quiz-area .component-card .card-content {
+  position: relative;
+  z-index: 10;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  transform: none !important;
+  transition: none !important;
+}
+
+.section-flex.quiz-area .component-card .card-content > p {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.section-flex.quiz-area .component-card.has-button {
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+  text-align: center;
+  min-height: 190px;
+}
+
+.component-more-info-button {
+  transform: translateY(100%);
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 20;
+}
+
+.section-flex.quiz-area
+  .component-card.has-button:hover
+  .component-more-info-button {
+  transform: translateX(-50%) translateY(0%);
+  opacity: 1;
+}
+
+.section-flex.quiz-area .component-card.has-button:hover .card-content {
+  transition: 0.3s ease-out;
+}
+
+.section-flex.quiz-area .component-card:hover .card-image-container {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1000px) {
+  .section-flex.quiz-area .card-container-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .section-flex.quiz-area .card-container-grid {
+    grid-template-columns: 1fr;
+  }
+  .quiz-container-wrapper {
+    width: 95%;
+  }
+}

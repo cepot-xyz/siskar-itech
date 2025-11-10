@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets desain/Itech pfp.png" type="image/x-icon">
+    <title>ITech | Kuis Laptop</title>
+</head>
+<body class="no-scroll"> <!-- class="no-scroll" ditambahkan untuk menonaktifkan scroll di halaman kuis -->
+
+<!-- == NAVBAR START == -->
+    <nav>
+        <a class="nav-logo" href="index.html"><img src="assets desain/Logo ITech Putih.png" style="height: 5vh;margin-right:8vh;" alt="Logo ITech"></a>
+        <div style="margin-right: 6vh;" class="divider">.</div>
+            <div class="nav-item">
+                <a class="nav-btn" href="kuis-laptop.html">Kuis Laptop</a>
+                <a class="nav-btn" href="kuis-komputer.html">Kuis Komputer</a>
+                <a class="nav-btn" href="produk.php">Produk</a>
+            </div>
+        </div>
+    </nav>
+<!-- == NAVBAR END == -->
+
+<section class="section-flex quiz-area">
+    <!-- WRAPPER UTAMA KUIS -->
+    <div class="quiz-container-wrapper">
+        
+        <!-- 1. Progress Bar akan diisi oleh JS -->
+        <div id="quiz-progress-bar" class="progress-container">
+            <!-- Progress Content dimuat di sini -->
+        </div>
+
+        <!-- 2. Container Pertanyaan (Card) akan diisi oleh JS -->
+        <div id="quiz-container" class="quiz-main-card">
+            <h1 class="loading-text">Memuat Kuis...</h1>
+        </div>
+
+        <!-- 3. TEMPAT KHUSUS TOMBOL NAVIGASI (di luar main card) -->
+        <div id="nav-buttons-placeholder" class="nav-buttons-container-fixed">
+            <!-- Tombol Navigasi dimuat di sini oleh JS -->
+        </div>
+    </div>
+</section>
+
+<!-- Panggil file JavaScript dari folder 'question' -->
+<script src="question/laptop-logic.js"></script> 
+</body>
+</html>
